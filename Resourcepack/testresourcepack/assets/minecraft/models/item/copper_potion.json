@@ -1,0 +1,1 @@
+{ "parent": "item/handheld", "textures": { "layer0": "item/copper_potion" }, "overrides": [ {"predicate": {"custom_model_data":1}, "model": "item/copper_potion/1"}, {"predicate": {"custom_model_data":2}, "model": "item/copper_potion/2"}, {"predicate": {"custom_model_data":3}, "model": "item/copper_potion/3"} ] }

@@ -1,0 +1,1 @@
+{ "parent": "item/handheld", "textures": { "layer0": "item/clay_ball" }, "overrides": [ {"predicate": {"custom_model_data":1}, "model": "item/clay_ball/1"}, {"predicate": {"custom_model_data":2}, "model": "item/clay_ball/2"}, {"predicate": {"custom_model_data":3}, "model": "item/clay_ball/3"} ] }

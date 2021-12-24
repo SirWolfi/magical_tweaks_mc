@@ -1,0 +1,6 @@
+{
+			"parent": "item/handheld",
+			"textures": {
+			  "layer0": "item/lime_dye/3"
+			}
+		}

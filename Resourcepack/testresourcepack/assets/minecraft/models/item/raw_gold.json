@@ -1,0 +1,1 @@
+{ "parent": "item/handheld", "textures": { "layer0": "item/raw_gold" }, "overrides": [ {"predicate": {"custom_model_data":1}, "model": "item/raw_gold/1"}, {"predicate": {"custom_model_data":2}, "model": "item/raw_gold/2"}, {"predicate": {"custom_model_data":3}, "model": "item/raw_gold/3"} ] }

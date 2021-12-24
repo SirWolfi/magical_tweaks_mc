@@ -1,0 +1,1 @@
+{ "parent": "item/handheld", "textures": { "layer0": "item/lime_dye" }, "overrides": [ {"predicate": {"custom_model_data":1}, "model": "item/lime_dye/1"}, {"predicate": {"custom_model_data":2}, "model": "item/lime_dye/2"}, {"predicate": {"custom_model_data":3}, "model": "item/lime_dye/3"} ] }

@@ -1,0 +1,6 @@
+{
+			"parent": "item/handheld",
+			"textures": {
+			  "layer0": "item/splash_potion/1"
+			}
+		}

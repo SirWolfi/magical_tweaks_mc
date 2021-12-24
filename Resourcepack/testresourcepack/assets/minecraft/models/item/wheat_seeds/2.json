@@ -1,0 +1,6 @@
+{
+			"parent": "item/handheld",
+			"textures": {
+			  "layer0": "item/wheat_seeds/2"
+			}
+		}

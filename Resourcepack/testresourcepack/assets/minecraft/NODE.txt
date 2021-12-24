@@ -1,0 +1,18 @@
+Hello, it's me, SirWolf.
+Just here to tell you about the do_it.sh
+
+The do_it.sh is a tool written by me in bash. It generates you the files you need for custom model data textures.
+I fist wanted to delete it, but meh, i'm just going to keep it here anyways. Maybe it's usefull for some of you.
+
+But be aware, it will only work on linux, or with some tools on linux like msys2, etc.
+
+You can use it with:
+
+./do_it.sh <name_of_the_item> <from> <to> <generate_json>
+
+THis will generate the custom model data files for "name_of_the_item" from the model data "from" to "to". 
+And if you set the last flag, "generate_json" to 1, it will generate an extra json in the /models/item folder which stores the overrides for the textures.
+
+This was done in like 5 minutes and is not that good. Still, i'm going to keep it here.
+
+Have fun ^^

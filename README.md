@@ -9,3 +9,7 @@ It adds about 60 new items with own textures.
 And that *only* with commands!
 
 Read the wiki for more!
+
+# credits
+All the "programming" was done by me, [SirWolf](https://github.com/SirWolfi). \
+The graphics on the other hand were made by [LLaamma](https://github.com/llaamma)

@@ -1,7 +1,7 @@
 # Magical Twearks Mc
 A minecraft datapack which adds 6 classes, atrfacts, new tables and other new items! (Multiplayer friendly!)
 
-***IMPORTANT: I'M STILL WORKING ON THE WIKI, ONCE IT'S DONE, THE DATAPACK WILL BE UPLOADED!***
+***IMPORTANT: THE WIKI IS NOT DONE YET. BUT THERE ARE SOME IMPORTANT INFOS YOU CAN/SHOULD READ!***
 # About
 Magical Twearks Mc is a datapack for everyone who loves magic and classes and for those who got bored of vanilla minecraft.
 

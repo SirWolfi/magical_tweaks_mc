@@ -1,5 +1,5 @@
 # Magical Twearks Mc
-A minecraft datapack which adds 6 classes, atrfacts, new tables and other new items! (Multiplayer friendly!)
+A minecraft datapack which adds 6 classes, artifacts, new tables and other new items! (Multiplayer friendly!)
 
 ***IMPORTANT: THE WIKI IS NOT DONE YET. BUT THERE ARE SOME IMPORTANT INFOS YOU CAN/SHOULD READ!***
 # About

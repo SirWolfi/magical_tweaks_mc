@@ -26,6 +26,7 @@ execute if score tmp variables matches 0 run playsound minecraft:block.fire.exti
 
 execute if score tmp variables matches 0 run scoreboard players set @s fire_cldw 0
 
-execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["fire_wand"]}} 1
+#execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["fire_wand"]}} 1
+execute if score tmp variables matches 2 run function the_sirwolf:intern/bin/not_for_your_class_error
 
 scoreboard players set tmp variables 0

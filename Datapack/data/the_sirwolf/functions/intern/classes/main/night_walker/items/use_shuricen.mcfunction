@@ -32,7 +32,8 @@ execute if score tmp variables matches 0 run execute as @e[type=armor_stand,tag=
 execute if score tmp variables matches 0 run scoreboard players set @s throw_s_cldw 0
 execute if score tmp variables matches 0 run scoreboard players set @s blood_cldw 0
 
-execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["night_sh"]}} 1
+#execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["night_sh"]}} 1
+execute if score tmp variables matches 2 run function the_sirwolf:intern/bin/not_for_your_class_error
 
 scoreboard players set tmp variables 0
 

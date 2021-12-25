@@ -24,7 +24,8 @@ execute if score tmp variables matches 0 run scoreboard players set @s pentagram
 execute if score tmp variables matches 0 run title @s title {"text": ""}
 execute if score tmp variables matches 0 run title @s subtitle {"text": "May the deamons give you power","bold": true,"color": "dark_red"}
 
-execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["pentagram"]}} 1
+#execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["pentagram"]}} 1
+execute if score tmp variables matches 2 run function the_sirwolf:intern/bin/not_for_your_class_error
 
 
 scoreboard players set tmp variables 0

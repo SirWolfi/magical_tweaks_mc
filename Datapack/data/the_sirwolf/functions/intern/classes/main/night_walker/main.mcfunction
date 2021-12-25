@@ -58,7 +58,7 @@ execute as @a[scores={pentagram_duration=1..}] if score @s class_id = NIGHT_WALK
 execute as @a[scores={pentagram_duration=1..}] at @s if score @s class_id = NIGHT_WALKER class_id run particle dust 0.322 0.016 0.016 1 ~ ~ ~ 0.5 0.5 0.5 0.01 25 
 execute as @a[scores={pentagram_duration=1..,deaths=1..}] if score @s class_id = NIGHT_WALKER class_id run scoreboard players set @s pentagram_duration 0
 
-execute as @a[scores={pentagram_duration=1..}] if score @s class_id = NIGHT_WALKER class_id if score @s pentagram_duration >= MAX pentagram_duration run function the_sirwolf:intern/classes/main/night_walker/items/end_pentagram_mode
+execute as @a[scores={pentagram_duration=1..}] if score @s class_id = NIGHT_WALKER class_id if score @s pentagram_duration >= MAX pentagram_duration at @s run function the_sirwolf:intern/classes/main/night_walker/items/end_pentagram_mode
 
 execute as @a[scores={class_id=7},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{EntityTag:{Tags:["pentagram"]}}}}] at @s if score @s pentagram_cldw >= MAX_cldw pentagram_cldw run scoreboard players operation @s pentagram_cldw = MAX_cldw pentagram_cldw
 

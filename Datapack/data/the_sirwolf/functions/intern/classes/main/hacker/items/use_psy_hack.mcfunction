@@ -14,6 +14,7 @@ execute if score tmp variables matches 0 run effect give @s hunger 2 100 true
 execute if score tmp variables matches 0 run playsound minecraft:block.portal.travel master @a
 execute if score tmp variables matches 0 run execute as @s at @s run function the_sirwolf:intern/classes/main/hacker/items/psy_hack/set
 
-execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["psy_hack"]}} 1
+#execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["psy_hack"]}} 1
+execute if score tmp variables matches 2 run function the_sirwolf:intern/bin/not_for_your_class_error
 
 scoreboard players set tmp variables 0

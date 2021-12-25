@@ -23,6 +23,7 @@ execute if score tmp variables matches 0 run playsound entity.arrow.hit_player m
 
 execute if score tmp variables matches 0 run scoreboard players set @s staff_oh_cldw 0
 
-execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["staff_oh"]}} 1
+#execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["staff_oh"]}} 1
+execute if score tmp variables matches 2 run function the_sirwolf:intern/bin/not_for_your_class_error
 
 scoreboard players set tmp variables 0

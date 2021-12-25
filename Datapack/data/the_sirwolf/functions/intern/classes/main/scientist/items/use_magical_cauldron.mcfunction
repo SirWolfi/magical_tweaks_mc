@@ -22,7 +22,8 @@ execute if score tmp variables matches 0 run scoreboard players set @s mag_caul_
 
 execute if score tmp variables matches 0 run clear @s wheat_seeds{EntityTag:{Tags:["chemicals"]}} 1
 
-execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["mag_caul"]}} 1
+#execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["mag_caul"]}} 1
+execute if score tmp variables matches 2 run function the_sirwolf:intern/bin/not_for_your_class_error
 
 execute if score tmp variables matches 1 run title @s title {"text": "","color": ""}
 execute if score tmp variables matches 1 run title @s subtitle {"text": "You don't have enough chemicals!","color": "red"}

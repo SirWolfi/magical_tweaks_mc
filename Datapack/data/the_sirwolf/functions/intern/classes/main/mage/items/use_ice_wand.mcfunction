@@ -36,7 +36,8 @@ execute if score tmp variables matches 0 run effect give @e[distance=1..5] slown
 
 execute if score tmp variables matches 0 run scoreboard players set @s ice_cldw 0
 
-execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["ice_wand"]}} 1
+#execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["ice_wand"]}} 1
+execute if score tmp variables matches 2 run function the_sirwolf:intern/bin/not_for_your_class_error
 
 scoreboard players set tmp variables 0
 

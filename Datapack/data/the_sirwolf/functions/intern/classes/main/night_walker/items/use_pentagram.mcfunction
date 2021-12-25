@@ -24,8 +24,6 @@ execute if score tmp variables matches 0 run scoreboard players set @s pentagram
 execute if score tmp variables matches 0 run title @s title {"text": ""}
 execute if score tmp variables matches 0 run title @s subtitle {"text": "May the deamons give you power","bold": true,"color": "dark_red"}
 
-execute if score tmp variables matches 0 run say i
-
 execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["pentagram"]}} 1
 
 

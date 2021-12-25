@@ -113,5 +113,4 @@ scoreboard players set MAX glider_boost_trail_t 25
 scoreboard objectives add health health
 
 function the_sirwolf:intern/classes/reset
-function the_sirwolf:intern/bin/teams/reset
 

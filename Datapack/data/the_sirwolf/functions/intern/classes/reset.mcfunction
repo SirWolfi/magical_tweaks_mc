@@ -5,9 +5,7 @@
  # Created by .
 ##
 
-team add medic "Medician"
-team modify medic prefix "Me | "
-team modify medic color red
+# Medic
 
 scoreboard objectives add staff_oc_cldw dummy
 
@@ -23,13 +21,7 @@ scoreboard players set MAX_cldw staff_oh_cldw_max 100
 scoreboard players set NORM_p staff_oh_cldw_max 60
 scoreboard players operation @a staff_oh_cldw_max = MAX_cldw staff_oh_cldw_max
 
-# More hp, less damage
-# Able to craft:
-# - Shield of savety
-# - Paladins Hammer
-team add tank "Tank"
-team modify tank prefix "Ta | "
-team modify tank color gray
+# Tank
 
 scoreboard objectives add pal_ham_used dummy
 
@@ -47,22 +39,9 @@ scoreboard objectives add pal_ham_used_max_m1 dummy
 scoreboard players set @a pal_ham_used_max_m1 50
 scoreboard players set NORM pal_ham_used_max_m1 50
 
-# more damage when on leaves
-# can zoom by sneaking
-# less hp
-# speed 1 if on grass with the boots
-# able to craft:
-# - Huntsman bow
-# - Woodwalker knive
-# - Boots of the Forest
-team add archer "Archer"
-team modify archer prefix "Ar | "
-team modify archer color dark_green
+# Archer
 
-
-team add mage "Mage"
-team modify mage prefix "Ma | "
-team modify mage color light_purple
+# Mage
 
 scoreboard objectives add bold_cldw dummy
 scoreboard players set MAX_cldw bold_cldw 450
@@ -81,37 +60,7 @@ scoreboard players set MAX fire_b_livetime 140
 scoreboard objectives add ring_o_tran_cldw dummy
 scoreboard players set MAX_cldw ring_o_tran_cldw 220
 
-# gives affects to teammates
-# less damage
-# able to craft:
-# - Bards Fidel
-# - 
-team add bard "Bard"
-team modify bard prefix "Ba | "
-team modify bard color gold
-
-#holzfäller
-#team add bard "Bard"
-#team modify bard prefix "Ba | "
-#team modify bard color gold
-
-# later
-team add undead "Undead"
-team modify undead prefix "Un | "
-team modify undead color dark_gray
-
-
-#no buffs/debuffs
-# can craft:
-# - blood sword (if hold and haven't hit since 20 sec. : invisible + shadow particle. All attacks inflict bleeding which deals 2 HP/s for 4 seconds)
-# - shuricen (3 modes: Day/Night/Midnight. Changeable via `/trigger shuricen`. Throws a projectile which will fly 30 blocks and does:
-# * Day: inflict burning on enemies
-# * Night: inflict blindness on enemies
-# * Midnight: inflict wither on enemies
-# - armor of the dark (no leveling. Endgame. makes you invisible when the lightlevel of the block below you has a certain value)
-team add night_walker
-team modify night_walker prefix "Nw | "
-team modify night_walker color black
+# Night Walker
 
 scoreboard objectives add blood_cldw dummy
 scoreboard players set MAX_cldw blood_cldw 400
@@ -161,21 +110,7 @@ scoreboard players set MAX pentagram_duration 600
 scoreboard objectives add pentagram_cldw dummy
 scoreboard players set MAX_cldw pentagram_cldw 900
 
-# no buffs/debuffs
-# can craft:
-# - teleporter (teleportes you 
-# - terminal ( can give you three effects with a cooldown of 3 min :
-# * vision hacks (nightvision for 2 min)
-# * jesus hacks (can run over water for 30 seconds)
-# * mobility hacks (gives speed 1 and jump boost 1 for 1 min)
-# * X-Ray hacks (gives every player in a range glow for 2 min)
-# * rage hacks (for every player killed gives an boost of strenght 1 for 3 min)
-# only one effect can be set at once)
-# 
-team add techi "Tech"
-team modify techi prefix "Te | "
-team modify techi color dark_green
-
+# Hacker
 #cldw = cooldown
 
 execute as @a at @s if score @s class_id = HACKER class_id if score @s psy_hack_en_time > c0 variables run function the_sirwolf:intern/classes/main/hacker/items/psy_hack/tp_back

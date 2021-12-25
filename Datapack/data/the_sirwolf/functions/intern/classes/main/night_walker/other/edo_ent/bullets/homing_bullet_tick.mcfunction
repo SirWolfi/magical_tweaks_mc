@@ -21,5 +21,4 @@ scoreboard players set @s tmp 0
 #execute if score @s tmp matches 1 run tp @e[sort=nearest,limit=1,scores=!{class_id=7},distance=..20] The_SirWolf
 #execute if score @s tmp matches 1 run tp @s ^ ^ ^ facing entity @e[sort=nearest,limit=1,scores=!{class_id=7},distance=..20]
 execute if score @s tmp matches 1 run tp @s ^ ^ ^1
-execute if score @s tmp matches 1 run say i
 scoreboard players set @s tmp 0

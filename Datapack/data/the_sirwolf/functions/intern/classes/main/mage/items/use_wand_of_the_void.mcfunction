@@ -25,6 +25,7 @@ execute if score tmp variables matches 0 run tp @a[tag=tp_me,limit=1,sort=neares
 execute if score tmp variables matches 0 run tag @a[tag=tp_me] remove tp_me
 execute if score tmp variables matches 0 run kill @e[tag=tp_arm]
 
-execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["wand_of_the_void"]}} 1
+#execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["wand_of_the_void"]}} 1
+execute if score tmp variables matches 2 run function the_sirwolf:intern/bin/not_for_your_class_error
 
 scoreboard players set tmp variables 0

@@ -18,6 +18,7 @@ scoreboard players set tonSec variables 0
 scoreboard players set on5Sec variables 0
 scoreboard players set c60 variables 60
 scoreboard players set c20 variables 20
+scoreboard players set c15 variables 15
 scoreboard players set c10 variables 10
 scoreboard players set c7 variables 7
 scoreboard players set c6 variables 6
@@ -111,6 +112,9 @@ scoreboard objectives add glider_boost_trail_t dummy
 scoreboard players set MAX glider_boost_trail_t 25
 
 scoreboard objectives add health health
+
+scoreboard objectives add afk_link dummy
+scoreboard players set MAX afk_link 0
 
 function the_sirwolf:intern/classes/reset
 

@@ -14,11 +14,11 @@ execute as @a[scores={class_id=7}] at @s run attribute @s generic.movement_speed
 #execute as @e[type=item,nbt={Item:{Count:1b,id:"minecraft:dirt"}}] at @s run execute if entity @e[type=item,limit=1,distance=..1,sort=nearest,nbt={Item:{Count:2b,id:"minecraft:grass_block"}}] run function the_sirwolf:intern/spawns/debug
 
 #other shiet i do by godness sake not understand
-execute as @a[scores={class_id=7,did_hit=1..,inf_blood_cldw=190..},nbt={SelectedItem:{id:"minecraft:iron_sword",tag:{EntityTag:{Tags:["night_bl"]}}}}] at @s run execute as @e[distance=..2.7] unless score @s class_id = NIGHT_WALKER class_id run scoreboard players set @s bleeding_cldw 1
-execute as @a[scores={class_id=7,did_hit=1..,inf_blood_cldw=190..},nbt={SelectedItem:{id:"minecraft:iron_sword",tag:{EntityTag:{Tags:["night_bl"]}}}}] at @s run scoreboard players set @s inf_blood_cldw 0
+execute as @a[scores={class_id=7,did_hit=1..},nbt={SelectedItem:{id:"minecraft:iron_sword",tag:{EntityTag:{Tags:["night_bl"]}}}}] at @s if score @s inf_blood_cldw >= MAX_cldw inf_blood_cldw run execute as @e[distance=0.2..2.7] run scoreboard players set @s bleeding_cldw 1
+execute as @a[scores={class_id=7,did_hit=1..},nbt={SelectedItem:{id:"minecraft:iron_sword",tag:{EntityTag:{Tags:["night_bl"]}}}}] at @s if score @s inf_blood_cldw >= MAX_cldw inf_blood_cldw run scoreboard players set @s inf_blood_cldw 0
 
-execute as @a[scores={class_id=7,did_hit=1..,inf_blood_cldw=190..},nbt={SelectedItem:{id:"minecraft:diamond_sword",tag:{EntityTag:{Tags:["night_bl_lvl2"]}}}}] at @s run execute as @e[distance=..2.7] unless score @s class_id = NIGHT_WALKER class_id run scoreboard players set @s bleeding_cldw 1
-execute as @a[scores={class_id=7,did_hit=1..,inf_blood_cldw=190..},nbt={SelectedItem:{id:"minecraft:diamond_sword",tag:{EntityTag:{Tags:["night_bl_lvl2"]}}}}] at @s run scoreboard players set @s inf_blood_cldw 0
+execute as @a[scores={class_id=7,did_hit=1..},nbt={SelectedItem:{id:"minecraft:diamond_sword",tag:{EntityTag:{Tags:["night_bl_lvl2"]}}}}] at @s if score @s inf_blood_cldw >= MAX_cldw inf_blood_cldw run execute as @e[distance=0.2..2.7] run scoreboard players set @s bleeding_cldw 1
+execute as @a[scores={class_id=7,did_hit=1..},nbt={SelectedItem:{id:"minecraft:diamond_sword",tag:{EntityTag:{Tags:["night_bl_lvl2"]}}}}] at @s if score @s inf_blood_cldw >= MAX_cldw inf_blood_cldw run scoreboard players set @s inf_blood_cldw 0
 
 
 execute as @e[scores={bleeding_cldw=1..}] at @s run scoreboard players operation @s tmp = @s bleeding_cldw
@@ -39,7 +39,11 @@ execute as @a[scores={class_id=7}] at @s if score @s pentagram_cldw >= MAX_cldw 
 function the_sirwolf:intern/classes/main/night_walker/check_if_invis
 
 scoreboard players add @a[scores={class_id=7},nbt={SelectedItem:{id:"minecraft:iron_sword",tag:{EntityTag:{Tags:["night_bl"]}}}}] inf_blood_cldw 1
-execute as @a[scores={class_id=7},nbt={SelectedItem:{id:"minecraft:iron_sword",tag:{EntityTag:{Tags:["night_bl"]}}}}] at @s if score @s inf_blood_cldw >= MAX_cldw inf_blood_cldw run scoreboard players operation @s inf_blood_cldw = MAX_cldw_m1 inf_blood_cldw
+execute as @a[scores={class_id=7},nbt={SelectedItem:{id:"minecraft:iron_sword",tag:{EntityTag:{Tags:["night_bl"]}}}}] at @s if score @s inf_blood_cldw >= MAX_cldw inf_blood_cldw run scoreboard players operation @s inf_blood_cldw = MAX_cldw inf_blood_cldw
+scoreboard players add @a[scores={class_id=7},nbt={SelectedItem:{id:"minecraft:diamond_sword",tag:{EntityTag:{Tags:["night_bl_lvl2"]}}}}] inf_blood_cldw 1
+execute as @a[scores={class_id=7},nbt={SelectedItem:{id:"minecraft:diamond_sword",tag:{EntityTag:{Tags:["night_bl_lvl2"]}}}}] at @s if score @s inf_blood_cldw >= MAX_cldw inf_blood_cldw run scoreboard players operation @s inf_blood_cldw = MAX_cldw inf_blood_cldw
+
+
 execute as @a[scores={class_id=7},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{EntityTag:{Tags:["edotensai"]}}}}] at @s if score @s edo_cldw >= MAX_cldw_m1 edo_cldw run scoreboard players operation @s edo_cldw = MAX_cldw_m1 edo_cldw
 
 execute as @a[scores={class_id=7},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{EntityTag:{Tags:["edotensai"]}}}}] at @s if score @s edo_cldw >= MAX_cldw_m1 edo_cldw run scoreboard players operation @s edo_cldw = MAX_cldw_m1 edo_cldw
@@ -84,11 +88,14 @@ execute as @a[scores={class_id=7}] at @s run execute as @e[distance=..2,type=ite
 #execute as @a[scores={class_id=7},scores={sneak=1..,smoke_mode=0},nbt={SelectedItem:{id:"minecraft:iron_sword",tag:{EntityTag:{Tags:["night_bl"]}}}}] at @s run scoreboard players set @s smoke_mode 1
 
 #cooldown show
-execute as @a[scores={class_id=7},nbt={SelectedItem:{id:"minecraft:iron_sword",Count:1b,tag:{EntityTag:{Tags:["night_bl"]}}}}] at @s if score @s inf_blood_cldw >= MAX_cldw_m1 inf_blood_cldw run title @s actionbar {"text":"Bleeding ready!"}
+execute as @a[scores={class_id=7},nbt={SelectedItem:{id:"minecraft:iron_sword",Count:1b,tag:{EntityTag:{Tags:["night_bl"]}}}}] at @s if score @s inf_blood_cldw >= MAX_cldw inf_blood_cldw run title @s actionbar {"text":"Bleeding ready!","color": "red"}
+execute as @a[scores={class_id=7},nbt={SelectedItem:{id:"minecraft:diamond_sword",Count:1b,tag:{EntityTag:{Tags:["night_bl_lvl2"]}}}}] at @s if score @s inf_blood_cldw >= MAX_cldw inf_blood_cldw run title @s actionbar {"text":"Bleeding ready!","color": "red"}
 
 execute as @a[scores={class_id=7},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["pentagram"]}}}}] at @s unless score @s pentagram_cldw >= MAX_cldw pentagram_cldw run title @s actionbar [{"score":{"name":"@s","objective":"pentagram_cldw"}},"/",{"score":{"name":"MAX_cldw","objective":"pentagram_cldw"}}]
 
 execute as @a[scores={class_id=7},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["pentagram"]}}}}] at @s if score @s pentagram_cldw >= MAX_cldw pentagram_cldw run title @s actionbar {"text":"Satan will accept you offer!","color": "dark_red","bold":true}
+
+execute as @a[scores={toggle_shadow_mode=1..}] if score @s class_id = NIGHT_WALKER class_id at @s run function the_sirwolf:intern/classes/main/night_walker/bin/disable_night_mode
 
 #execute as @e[tag=edo_tomb] at @s run function the_sirwolf:intern/classes/main/night_walker/other/edotens_tomb_tick
 #execute as @e[tag=edo_ent] at @s run function the_sirwolf:intern/classes/main/night_walker/other/edo_ent_tick

@@ -7,7 +7,8 @@
 
 #call here all the functions from the classes items
 
-execute if score onSec variables matches 1 if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["knive"]}}}}] run function the_sirwolf:intern/spawns/blood
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["knive"]}}}}] run playsound entity.ghast.hurt master @a
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["knive"]}}}}] run function the_sirwolf:intern/spawns/blood
 
 execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["emergency_syringe"]}}}}] run effect give @s instant_health 1 20
 execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["emergency_syringe"]}}}}] run clear @s carrot_on_a_stick{EntityTag:{Tags:["emergency_syringe"]}} 1
@@ -53,6 +54,8 @@ execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1
 execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["dis_nuke_s"]}}}}] run function the_sirwolf:intern/classes/main/scientist/items/disease_nuke/use_dis_nuke
 
 execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["pentagram"]}}}}] run function the_sirwolf:intern/classes/main/night_walker/items/use_pentagram
+
+execute if entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["blood_wand"]}}}}] run function the_sirwolf:intern/classes/main/mage/items/use_blood_wand
 
 
 # handles medic-pills

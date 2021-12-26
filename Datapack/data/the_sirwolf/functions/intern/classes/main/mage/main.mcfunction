@@ -16,6 +16,8 @@ scoreboard players add @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:c
 execute as @a[scores={class_id=2}] if score @s ice_cldw >= MAX_cldw ice_cldw run scoreboard players operation @s ice_cldw = MAX_cldw_m1 ice_cldw
 scoreboard players add @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["fire_wand"]}}}}] fire_cldw 1
 execute as @a[scores={class_id=2}] if score @s fire_cldw >= MAX_cldw fire_cldw run scoreboard players operation @s fire_cldw = MAX_cldw fire_cldw
+scoreboard players add @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["blood_wand"]}}}}] blood_wand_cldw 1
+execute as @a[scores={class_id=2}] if score @s blood_wand_cldw >= MAX_cldw blood_wand_cldw run scoreboard players operation @s blood_wand_cldw = MAX_cldw blood_wand_cldw
 
 scoreboard players add @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["ring_o_tran"]}}}}] ring_o_tran_cldw 1
 execute as @a[scores={class_id=2}] if score @s ring_o_tran_cldw >= MAX_cldw ring_o_tran_cldw run scoreboard players operation @s ring_o_tran_cldw = MAX_cldw ring_o_tran_cldw
@@ -37,6 +39,9 @@ execute as @a[scores={class_id=2}] at @s run execute as @e[distance=..2,type=ite
 
 execute as @a[scores={class_id=2}] at @s run execute as @e[distance=..2,type=item,nbt={Item:{Count:1b,id:"minecraft:purple_dye",tag:{EntityTag:{Tags:["strange_orb"]}}}}] at @s run execute if entity @e[type=item,limit=1,distance=..1,sort=nearest,nbt={Item:{Count:1b,id:"minecraft:carrot_on_a_stick",tag:{EntityTag:{Tags:["ring_f"]}}}}] if entity @e[tag=mage_tab,distance=..0.6] run function the_sirwolf:intern/classes/main/mage/items/ring_of_tranquillity
 
+execute as @a[scores={class_id=2}] at @s run execute as @e[distance=..2,type=item,nbt={Item:{Count:30b,id:"minecraft:redstone",tag:{EntityTag:{Tags:["blood"]}}}}] at @s run execute if entity @e[type=item,limit=1,distance=..1,sort=nearest,nbt={Item:{Count:64b,id:"minecraft:bone"}}] if entity @e[tag=mage_tab,distance=..0.6] run function the_sirwolf:intern/classes/main/mage/items/blood_wand
+
+
 # book of greed
 execute as @a[scores={class_id=2}] at @s run execute as @e[distance=..2,type=item,nbt={Item:{Count:1b,id:"minecraft:purple_dye",tag:{EntityTag:{Tags:["storm_orb"]}}}}] at @s run execute if entity @e[type=item,limit=1,distance=..1,sort=nearest,nbt={Item:{Count:1b,id:"minecraft:writable_book"}}] if entity @e[tag=mage_tab,distance=..0.6] run function the_sirwolf:intern/classes/main/mage/items/book_of_greed
 
@@ -56,6 +61,7 @@ execute as @e[type=item_frame,tag=mage_tab] at @s if block ~ ~-1 ~ magma_block r
 kill @e[type=item_frame,tag=mage_tab,tag=!valid]
 
 function the_sirwolf:intern/classes/main/mage/items/bullets/fire_ball_tick
+function the_sirwolf:intern/classes/main/mage/items/bullets/blood_line_tick
 
 #show cooldown
 
@@ -63,8 +69,11 @@ execute as @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:carrot_on_a_s
 execute as @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["storm_wand"]}}}}] at @s unless score @s bold_cldw >= MAX_cldw_m1 bold_cldw run title @s actionbar [{"score":{"name":"@s","objective":"bold_cldw"}},"/",{"score":{"name":"MAX_cldw","objective":"bold_cldw"}}]
 execute as @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["fire_wand"]}}}}] at @s unless score @s fire_cldw >= MAX_cldw_m1 fire_cldw run title @s actionbar [{"score":{"name":"@s","objective":"fire_cldw"}},"/",{"score":{"name":"MAX_cldw","objective":"fire_cldw"}}]
 execute as @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["ring_o_tran"]}}}}] at @s unless score @s ring_o_tran_cldw >= MAX_cldw_m1 ring_o_tran_cldw run title @s actionbar [{"score":{"name":"@s","objective":"ring_o_tran_cldw"}},"/",{"score":{"name":"MAX_cldw","objective":"ring_o_tran_cldw"}}]
+execute as @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["blood_wand"]}}}}] at @s unless score @s blood_wand_cldw >= MAX_cldw blood_wand_cldw run title @s actionbar [{"score":{"name":"@s","objective":"blood_wand_cldw"}},"/",{"score":{"name":"MAX_cldw","objective":"blood_wand_cldw"}}]
+
 
 execute as @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["ice_wand"]}}}}] at @s if score @s ice_cldw >= MAX_cldw_m1 ice_cldw run title @s actionbar {"text":"Icespell ready!","color": "dark_blue"}
 execute as @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["storm_wand"]}}}}] at @s if score @s bold_cldw >= MAX_cldw_m1 bold_cldw run title @s actionbar {"text":"Stormspell ready!","color": "blue"}
 execute as @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["fire_wand"]}}}}] at @s if score @s fire_cldw >= MAX_cldw fire_cldw run title @s actionbar {"text":"Firespell ready!","color": "red"}
 execute as @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["ring_o_tran"]}}}}] at @s if score @s ring_o_tran_cldw >= MAX_cldw ring_o_tran_cldw run title @s actionbar {"text":"Ring ready!","color": "dark_gray"}
+execute as @a[scores={class_id=2},nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",Count:1b,tag:{EntityTag:{Tags:["blood_wand"]}}}}] at @s if score @s blood_wand_cldw >= MAX_cldw blood_wand_cldw run title @s actionbar {"text":"Bloodspell ready!","color": "dark_red"}

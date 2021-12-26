@@ -31,6 +31,7 @@ execute if score tmp variables matches 0 run scoreboard players set @s blood_cld
 
 execute if score tmp variables matches 0 run kill @e[type=item,distance=..2]
 
-execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["edotensai"]}} 1
+#execute if score tmp variables matches 2 run clear @s carrot_on_a_stick{EntityTag:{Tags:["edotensai"]}} 1
+execute if score tmp variables matches 2 run function the_sirwolf:intern/bin/not_for_your_class_error
 
 scoreboard players set tmp variables 0

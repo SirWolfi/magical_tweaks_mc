@@ -60,6 +60,12 @@ scoreboard players set MAX fire_b_livetime 140
 scoreboard objectives add ring_o_tran_cldw dummy
 scoreboard players set MAX_cldw ring_o_tran_cldw 220
 
+scoreboard objectives add blood_wand_cldw dummy
+scoreboard players set MAX_cldw blood_wand_cldw 50
+
+scoreboard objectives add blood_line_livetime dummy
+scoreboard players set MAX blood_line_livetime 60
+
 # Night Walker
 
 scoreboard objectives add blood_cldw dummy
@@ -109,6 +115,13 @@ scoreboard players set MAX pentagram_duration 600
 
 scoreboard objectives add pentagram_cldw dummy
 scoreboard players set MAX_cldw pentagram_cldw 900
+
+scoreboard objectives add enable_shadow_mode dummy
+execute as @a unless score @s enable_shadow_mode matches 0 run scoreboard players set @s enable_shadow_mode 1
+
+scoreboard objectives add toggle_shadow_mode trigger
+scoreboard players enable @a toggle_shadow_mode
+scoreboard players set @a toggle_shadow_mode 0
 
 # Hacker
 #cldw = cooldown
